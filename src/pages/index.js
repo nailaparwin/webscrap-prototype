@@ -1,5 +1,12 @@
 import React from "react"
+import {Header} from './header'
+import Desc from './desc'
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <div>
+      <Header/>
+      <Desc/>
+    </div>
+  )
 }
