@@ -14,7 +14,8 @@ const cheerio = require("cheerio");
 const useStyles = makeStyles((theme) => ({
   root: {
     
-    fontSize: '24px',    
+    fontSize: '24px', 
+
     //paddingTop: '2%',
     //paddingBottom: '5%',
     alignItems: 'center',
@@ -132,9 +133,9 @@ export default function Desc() {
     
       <Grid container spacing={1}>
       <Grid item xs={12} sm={12} md={12}>
-      <div>
-        <form className={classes.root} noValidate autoComplete="off">
-          <Box width="70%" textAlign="center" margin="auto">
+      <div className={classes.root}>
+        {/* <form  className={classes.root} noValidate autoComplete="off"> */}
+          <Box width="70%" textAlign="center" margin="auto"> 
           {/* <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>           */}
           <input type="text" id="searchBox" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>
           </Box>
@@ -144,7 +145,7 @@ export default function Desc() {
           </Button>
           </Box>
           
-        </form>
+        {/* </form> */}
       </div>    
     
     </Grid>
