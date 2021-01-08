@@ -135,7 +135,7 @@ export default function Desc() {
       <div>
         <form className={classes.root} noValidate autoComplete="off">
           <Box width="70%" textAlign="center" margin="auto">
-          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}} fullWidth/>          
+          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>          
           </Box>
           <Box width="70%" textAlign="center" margin="auto" marginTop="10px">          
           <Button variant="outlined" color="primary" onClick={scrapSteam}>
