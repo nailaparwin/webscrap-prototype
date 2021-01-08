@@ -129,13 +129,14 @@ export default function Desc() {
 
 
   return (
-    <div>
+    
       <Grid container spacing={1}>
       <Grid item xs={12} sm={12} md={12}>
       <div>
         <form className={classes.root} noValidate autoComplete="off">
           <Box width="70%" textAlign="center" margin="auto">
-          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>          
+          {/* <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>           */}
+          <Input type="text" id="searchBox" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>
           </Box>
           <Box width="70%" textAlign="center" margin="auto" marginTop="10px">          
           <Button variant="outlined" color="primary" onClick={scrapSteam}>
@@ -150,16 +151,18 @@ export default function Desc() {
     
     <Grid item xs={12} sm={6} md={6}>
       <div style={{ marginLeft:"50px"}}>  
-        <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
-              fontSize="3em" height="100px" color="purple" > 
+        {/* <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
+              fontSize="3em" height="100px" color="purple" >  */}
+        <div style={{textAlign:"center", fontWeight:"bold", fontSize:"3em", height:"100px", color:"purple", marginTop:"-30px"}}> 
               Get Everything you Want
-        </Box>
-        <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
-              fontSize="1em" height="100px" color="#34495E"> 
+        </div>
+        {/* <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
+              fontSize="1em" height="100px" color="#34495E">  */}
+          <div style={{textAlign:"center", fontWeight:"bold", fontSize:"1em", height:"100px", color:"#34495E"}}> 
               Shop everything. Explore our range of products.
               <br/>
               Select the one you need
-        </Box>
+        </div>
       </div>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
@@ -175,11 +178,11 @@ export default function Desc() {
           <h3> price: {l.price} </h3> 
           </div>
           </a>
-    </Grid>
+          </Grid>
         ))}
      
       </Grid>
      
-  </div>
+  
   )
 }
