@@ -134,15 +134,14 @@ export default function Desc() {
       <Grid item xs={12} sm={12} md={12}>
       <div style={{marginBottom:"0px"}}>
         <form className={classes.root} noValidate autoComplete="off">
-          <div style={{width:"70%", textAlign:"center", margin:"auto"}}>
-          
-          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>          
-          </div>
-          <div style={{width:"70%", textAlign:"center", margin:"auto", marginTop:"10px"}}>  
+          <Box width="70%" textAlign="center" margin="auto">
+          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}} fullWidth/>          
+          </Box>
+          <Box width="70%" textAlign="center" margin="auto" marginTop="10px">          
           <Button variant="outlined" color="primary" onClick={scrapSteam}>
             Search 
           </Button>
-          </div>
+          </Box>
           
         </form>
       </div>    
@@ -150,20 +149,21 @@ export default function Desc() {
     </Grid>
     
     <Grid item xs={12} sm={6} md={6}>
-      <div style={{marginTop:"0px", marginLeft:"50px"}}> 
-      <div style={{textAlign:"center", fontWeight:"bold", fontSize:"3em", height:"100px", color:"purple", marginTop:"-30px"}}>                   
-        
+      <div style={{ marginLeft:"50px"}}>  
+        <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
+              fontSize="3em" height="100px" color="purple" marginTop="-30px"> 
               Get Everything you Want
-        </div>
-        <div style={{textAlign:"center", fontWeight:"bold", fontSize:"1em", height:"100px", color:"#34495E"}}>                   
+        </Box>
+        <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
+              fontSize="1em" height="100px" color="#34495E"> 
               Shop everything. Explore our range of products.
               <br/>
               Select the one you need
-        </div>
+        </Box>
       </div>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-      <div style={{marginTop:"0px",marginLeft:"50px"}}> <img src={product} alt="products" width="350px"/> </div>
+      <div style={{marginTop:"-100px",marginLeft:"50px"}}> <img src={product} alt="products" width="350px"/> </div>
       </Grid>           
         
         {listProduct.map(l => (
