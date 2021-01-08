@@ -133,8 +133,8 @@ export default function Desc() {
       <Grid container spacing={1}>
       <Grid item xs={12} sm={12} md={12}>
       <div style={{marginBottom:"0px"}}>
-        <form className={classes.root} noValidate autoComplete="off">
-          <div style={{width:"70%", textAlign:"center", margin:"auto"}}>
+        <form noValidate autoComplete="off">
+          <div style={{width:"70%", textAlign:"center", margin:"auto", marginTop:"10px"}}>
           
           <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}} fullWidth/>          
           </div>
