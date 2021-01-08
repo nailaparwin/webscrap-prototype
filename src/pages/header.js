@@ -49,7 +49,7 @@ export default function Header() {
     const { ref } = useWebAnimations({ ...bounceInDown });
     
     return (
-      <>
+      <div>
       <div style={{display:'flex'}}>
       <motion.div whileHover={{ scale: 1.2  }}>
       <Avatar  className={classes.large}   align={'center'}> Logo </Avatar>
@@ -80,6 +80,6 @@ export default function Header() {
         </Typography>   
         
       </div> 
-    </>
+    </div>
     );
   }
