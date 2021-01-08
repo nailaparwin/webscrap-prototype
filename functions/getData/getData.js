@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
         
         //const url = `https://www.amazon.com.au/s?k=mobile`
         const data = await axios.get(url);                 
-console.log(data.data)
+        console.log(data.data)
       return {
         statusCode: 200,
         body: JSON.stringify({ data: `${data.data}` }),

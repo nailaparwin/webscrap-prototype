@@ -8,9 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import { useQuery, useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import { red } from '@material-ui/core/colors';
-import detail from "./detail";
 const cheerio = require("cheerio");
-const axios = require("axios").default;
 
 
 const useStyles = makeStyles((theme) => ({
@@ -66,7 +64,7 @@ export default function Desc() {
   const [listProduct, setListProduct] = useState([]);
   const [data, setData] = useState('default data');
   //const { loading, error, datas, refetch } = useQuery(GET_PRODUCTS);
-  //const [add_product] = useMutation(ADD_PRODUCT);
+  const [add_product] = useMutation(ADD_PRODUCT);
 
   useEffect(() => {    
     const selector =  cheerio.load(data);    
