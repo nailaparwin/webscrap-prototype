@@ -75,7 +75,7 @@ export default function Header() {
       <div className={classes.root}>                       
         <Typography component="div" ref={ref} >                  
             <motion.div whileHover={{ scale: 2  }}>
-            prototype app
+             Prototype App
             </motion.div>           
         </Typography>   
         

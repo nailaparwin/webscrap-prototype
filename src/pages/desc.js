@@ -150,7 +150,7 @@ export default function Desc() {
     </Grid>
     
     <Grid item xs={12} sm={6} md={6}>
-      <div style={{marginTop:"0px", marginLeft:"50px"}}> 
+      <div style={{ marginLeft:"50px"}}> 
       <div style={{textAlign:"center", fontWeight:"bold", fontSize:"3em", height:"100px", color:"purple", marginTop:"-30px"}}>                   
         
               Get Everything you Want
