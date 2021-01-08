@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import { useQuery, useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import { red } from '@material-ui/core/colors';
+import detail from "./detail";
 const cheerio = require("cheerio");
 const axios = require("axios").default;
 
@@ -169,12 +170,13 @@ export default function Desc() {
         
         {listProduct.map(l => (
           <Grid item xs={12} sm={3} md={4} key={l.title} >
+          <a href="/detail">
           <div style={{width:"70%", margin:"auto", borderTop:"2px solid grey"}} key={l.title}>
           <h4> {l.title} </h4>
           <img src={l.imgsrc} alt=""/>
           <h3> price: {l.price} </h3> 
           </div>
-          
+          </a>
     </Grid>
         ))}
      
