@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     
     fontSize: '24px',    
-    paddingTop: '2%',
-    paddingBottom: '5%',
+    //paddingTop: '2%',
+    //paddingBottom: '5%',
     alignItems: 'center',
     textAlign: 'center',
-    align: 'center',
+    //align: 'center',
     display: 'block'
   },
   rootcard: {
@@ -132,7 +132,7 @@ export default function Desc() {
     <div>
       <Grid container spacing={1}>
       <Grid item xs={12} sm={12} md={12}>
-      <div style={{marginBottom:"0px"}}>
+      <div>
         <form className={classes.root} noValidate autoComplete="off">
           <Box width="70%" textAlign="center" margin="auto">
           <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}} fullWidth/>          
@@ -151,7 +151,7 @@ export default function Desc() {
     <Grid item xs={12} sm={6} md={6}>
       <div style={{ marginLeft:"50px"}}>  
         <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
-              fontSize="3em" height="100px" color="purple" marginTop="-30px"> 
+              fontSize="3em" height="100px" color="purple" > 
               Get Everything you Want
         </Box>
         <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
@@ -163,7 +163,7 @@ export default function Desc() {
       </div>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-      <div style={{marginTop:"-100px",marginLeft:"50px"}}> <img src={product} alt="products" width="350px"/> </div>
+      <div style={{marginLeft:"50px"}}> <img src={product} alt="products" width="350px"/> </div>
       </Grid>           
         
         {listProduct.map(l => (
