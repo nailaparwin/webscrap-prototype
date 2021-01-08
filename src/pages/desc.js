@@ -64,7 +64,7 @@ export default function Desc() {
   const [listProduct, setListProduct] = useState([]);
   const [data, setData] = useState('default data');
   //const { loading, error, datas, refetch } = useQuery(GET_PRODUCTS);
-  const [add_product] = useMutation(ADD_PRODUCT);
+  //const [add_product] = useMutation(ADD_PRODUCT);
 
   useEffect(() => {    
     const selector =  cheerio.load(data);    
