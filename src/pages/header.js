@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     backgroundColor: '#34495E ',
     color:'white',
-    width:'110px',
+    maxWidth:'110px',
     height:'30px',
     margin:'5px',
   }
@@ -72,8 +72,8 @@ export default function Header() {
         </motion.div>
       </div>
       </div>
-      <div className={classes.root} id="main-heading">                       
-        <Typography component="div" ref={ref} id="top-heading">                  
+      <div className={classes.root}>                       
+        <Typography component="div" ref={ref} >                  
             <motion.div whileHover={{ scale: 2  }}>
             prototype app
             </motion.div>           
