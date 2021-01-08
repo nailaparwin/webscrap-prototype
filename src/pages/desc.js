@@ -133,10 +133,10 @@ export default function Desc() {
       <Grid container spacing={1}>
       <Grid item xs={12} sm={12} md={12}>
       <div style={{marginBottom:"0px"}}>
-        <form noValidate autoComplete="off">
-          <div style={{width:"70%", textAlign:"center", margin:"auto", marginTop:"10px"}}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <div style={{width:"70%", textAlign:"center", margin:"auto"}}>
           
-          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}} fullWidth/>          
+          <TextField id="searchBox" label="Search" variant="outlined" value={item} onChange={(e) => { setItem(e.target.value)}}/>          
           </div>
           <div style={{width:"70%", textAlign:"center", margin:"auto", marginTop:"10px"}}>  
           <Button variant="outlined" color="primary" onClick={scrapSteam}>
@@ -150,7 +150,7 @@ export default function Desc() {
     </Grid>
     
     <Grid item xs={12} sm={6} md={6}>
-      <div style={{ marginLeft:"50px"}}> 
+      <div style={{marginTop:"0px", marginLeft:"50px"}}> 
       <div style={{textAlign:"center", fontWeight:"bold", fontSize:"3em", height:"100px", color:"purple", marginTop:"-30px"}}>                   
         
               Get Everything you Want
