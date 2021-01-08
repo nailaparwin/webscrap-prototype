@@ -2,24 +2,22 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
 import useWebAnimations, { bounceInDown } from "@wellyshen/use-web-animations";
 import { motion } from "framer-motion";
-import productImage from './images/products.jpg';
-import productImage2 from './images/products2.jpg';
-import Image1 from './images/amaz4.jpg';
+import Image1 from './images/bg.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {    
     fontSize: '24px',    
     //backgroundColor: '#0080FF',
     backgroundColor: '#34495E ',   
-    //backgroundImage: `url(${Image1})`,
-    backgroundImage: `url(${productImage}) , url(${productImage2})`,
+    backgroundImage: `url(${Image1})`,
+    //backgroundImage: `url(${productImage}) , url(${productImage2})`,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: `left top, right top`,
-    color:'white',
+    //backgroundPosition: `left top, right top`,
+    backgroundSize: "100%",
+    height:"200px",
+    color:'black',
     paddingTop: '2%',
     paddingBottom: '5%',
     alignItems: 'center',
@@ -66,7 +64,7 @@ export const Header = () => {
         </motion.div>
 
         <motion.div whileHover={{ scale: 1.2  }} whileTap={{ scale: 0.8 }} className={classes.btn}>
-        <a className={classes.btn} href="#documentary"> Documentary </a> 
+        <a className={classes.btn} href="#products"> Products </a> 
         </motion.div>
 
         <motion.div whileHover={{ scale: 1.2  }} whileTap={{ scale: 0.8 }} className={classes.btn}>
@@ -80,10 +78,7 @@ export const Header = () => {
             prototype app
             </motion.div>           
         </Typography>   
-        <Box textAlign="center"  fontWeight="fontWeightBold"  
-              fontSize="2em"  >
-               Company Name
-              </Box>                        
+        
       </div> 
     </>
     );

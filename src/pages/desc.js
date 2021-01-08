@@ -1,13 +1,7 @@
 import React, {useState, useEffect} from "react"
-//import product from './images/Discount.gif'
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
-import { deepOrange, deepPurple } from '@material-ui/core/colors';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import useWebAnimations, { bounceInDown } from "@wellyshen/use-web-animations";
-import { motion } from "framer-motion";
 import product from './images/Discounts.gif'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -68,23 +62,24 @@ mutation AddProduct($title: String!, $imgsrc: String!, $category: String!, $mcat
 export default function Desc() {
   const classes = useStyles();    
   const [item, setItem] = useState('shampoo');
-  const [search, setSearch] = useState(false)
   const [listProduct, setListProduct] = useState([]);
   const [data, setData] = useState('default data');
   //const { loading, error, datas, refetch } = useQuery(GET_PRODUCTS);
   //const [add_product] = useMutation(ADD_PRODUCT);
 
-  useEffect(() => {
-    console.log("useEffect Called");
-    setSearch(false)
-    // fetch(`/.netlify/functions/hello?name=from Serverless Function`)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     //setData(data);
-    //     console.log("Data: " + JSON.stringify(data));
-        
-    //   });
-  }, [data, item, search]);
+  useEffect(() => {    
+    const selector =  cheerio.load(data);    
+    const searchResults = selector("body").find(        
+         "div.a-section.a-spacing-medium"       
+       );        
+    const deals = searchResults
+      .map((idx, el) => {
+        const elementSelector = selector(el);        
+        return extractDeal(elementSelector);
+      })
+      .get();      
+      setListProduct(deals)
+  }, [data]);
 
   const fethHtml = async url => {
     try {
@@ -92,7 +87,7 @@ export default function Desc() {
       await fetch(`/.netlify/functions/getData?url=${url}`)
       .then(response => response.json())
       .then(data => {
-        setData(data.data);        
+        setData(data.data);                
       });      
       return data.data;     
     } catch {
@@ -126,27 +121,11 @@ export default function Desc() {
       }
     };
 
-  const scrapSteam = async () => {
-    setSearch(true)
+  const scrapSteam = async () => {    
     console.log("item = ", item)
     const url = `https://www.amazon.com.au/s?k=${item}`  
     const html = await fethHtml(url);
-    //console.log(html)
-    const selector =  cheerio.load(data);    
-    const searchResults = selector("body").find(        
-         "div.a-section.a-spacing-medium"       
-       );        
-    const deals = searchResults
-      .map((idx, el) => {
-        const elementSelector = selector(el);        
-        return extractDeal(elementSelector);
-      })
-      .get();
-  
-      console.log("deals" , deals)
-      setListProduct(deals)
-      //listOfProduct = listOfProduct.concat(deals)
-      //console.log("listOfProduct ",listOfProduct)
+    
   };
 
 
@@ -167,12 +146,11 @@ export default function Desc() {
           
         </form>
       </div>    
-
-    {/* <div id="head-div" > */}
+    
     </Grid>
     
     <Grid item xs={12} sm={6} md={6}>
-      <div style={{marginTop:"-50px", marginLeft:"20px"}}>  
+      <div style={{marginTop:"-50px", marginLeft:"50px"}}>  
         <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
               fontSize="3em" height="100px" color="purple" marginTop="-30px"> 
               Get Everything you Want
@@ -186,63 +164,21 @@ export default function Desc() {
       </div>
       </Grid>
       <Grid item xs={12} sm={6} md={6}>
-      <div style={{marginTop:"-100px",marginLeft:"20px"}}> <img src={product} alt="products" width="350px"/> </div>
-      </Grid>
-      
-        {console.log(listProduct.length)}
+      <div style={{marginTop:"-100px",marginLeft:"50px"}}> <img src={product} alt="products" width="350px"/> </div>
+      </Grid>           
         
         {listProduct.map(l => (
-          <Grid item xs={12} sm={3} md={4} spacing={2} >
-          <div style={{width:"70%", margin:"auto"}} key={l.title}>
+          <Grid item xs={12} sm={3} md={4} key={l.title} >
+          <div style={{width:"70%", margin:"auto", borderTop:"2px solid grey"}} key={l.title}>
           <h4> {l.title} </h4>
           <img src={l.imgsrc} alt=""/>
           <h3> price: {l.price} </h3> 
           </div>
-          {/* <Card className={classes.rootcard} key={l.title}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={l.title}
-        subheader={l.price}
-      />
-      <CardMedia
-      component="img"
-        //className={classes.media}
-        height="200"
-        
-        image={l.imgsrc}
-        title={item}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {l.title}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-       
-      </CardActions>
-    
-    </Card> */}
+          
     </Grid>
         ))}
      
       </Grid>
-      {/* </div>   */}
-
      
   </div>
   )
