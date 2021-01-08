@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  document.documentElement.style.setProperty('--animate-duration', '2s');
+  //document.documentElement.style.setProperty('--animate-duration', '2s');
 
     const classes = useStyles();    
     const { ref } = useWebAnimations({ ...bounceInDown });
