@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import useWebAnimations, { bounceInDown } from "@wellyshen/use-web-animations";
 import { motion } from "framer-motion";
 import Image1 from './images/bg.png';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {    
@@ -48,8 +49,10 @@ export default function Header() {
     const classes = useStyles();    
     const { ref } = useWebAnimations({ ...bounceInDown });
     
-    return (
-      <div>
+    return (     
+
+      <Grid container spacing={1}>
+      <Grid item xs={12} sm={12} md={12}>
       <div style={{display:'flex'}}>
       <motion.div whileHover={{ scale: 1.2  }}>
       <Avatar  className={classes.large}   align={'center'}> Logo </Avatar>
@@ -72,6 +75,8 @@ export default function Header() {
         </motion.div>
       </div>
       </div>
+      </Grid>
+      <Grid item xs={12} sm={12} md={12}>
       <div className={classes.root} id="main-heading">                       
         <Typography component="div" ref={ref} id="top-heading">                  
             <motion.div whileHover={{ scale: 2  }}>
@@ -80,6 +85,7 @@ export default function Header() {
         </Typography>   
         
       </div> 
-    </div>
+    </Grid>
+    </Grid>
     );
   }
