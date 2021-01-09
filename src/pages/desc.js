@@ -159,7 +159,7 @@ export default function Desc() {
       <div style={{ marginLeft:"50px"}}>  
         {/* <Box textAlign="center" m={1} fontWeight="fontWeightBold"  
               fontSize="3em" height="100px" color="purple" >  */}
-        <div style={{textAlign:"center", fontWeight:"bold", fontSize:"3em", height:"100px", color:"purple", marginTop:"-30px"}}> 
+        <div style={{textAlign:"center", fontWeight:"bold", fontSize:"3em", height:"100px", color:"purple", marginTop:"30px"}}> 
               Get Everything you Want
         </div>
         {/* <Box textAlign="center" m={1} fontWeight="fontWeightBold"  

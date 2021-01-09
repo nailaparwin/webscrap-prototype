@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
     align: 'center',
-    //display: 'block'
+    display: 'block'
   },
   
   large: {
@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
     color:'white',
     width:'110px',
     height:'30px',
+    padding:'5px',
     margin:'5px',
   }
 }));
