@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'center',
     align: 'center',
-    display: 'block'
+    //display: 'block'
   },
   
   large: {
@@ -53,6 +53,7 @@ export default function Header() {
 
       <Grid container spacing={1}>
       <Grid item xs={12} sm={12} md={12}>
+        <div>
       <div style={{display:'flex'}}>
       <motion.div whileHover={{ scale: 1.2  }}>
       <Avatar  className={classes.large}   align={'center'}> Logo </Avatar>
@@ -73,6 +74,7 @@ export default function Header() {
         <motion.div whileHover={{ scale: 1.2  }} whileTap={{ scale: 0.8 }} className={classes.btn}>
         <a className={classes.btn} href="#contact"> Contact </a> 
         </motion.div>
+      </div>
       </div>
       </div>
       </Grid>
