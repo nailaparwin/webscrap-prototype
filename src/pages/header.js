@@ -55,9 +55,9 @@ export default function Header() {
       <Grid item xs={12} sm={12} md={12}>
         <div>
       <div style={{display:'flex'}}>
-      <motion.div whileHover={{ scale: 1.2  }}>
+      {/* <motion.div whileHover={{ scale: 1.2  }}>
       <Avatar  className={classes.large}   align={'center'}> Logo </Avatar>
-      </motion.div>
+      </motion.div> */}
       <div id="menu" style={{display:'flex', margin:'auto'}}>
       <motion.div whileHover={{ scale: 1.2  }} whileTap={{ scale: 0.8 }} className={classes.btn} >
         <a  href="#about" className={classes.btn}> About </a> 
